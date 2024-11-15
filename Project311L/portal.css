@@ -1,0 +1,183 @@
+/* Reset and body styles */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: #f1f6fc; /* Soft light background for the whole page */
+}
+
+/* Header */
+.header {
+  background-color: #6a80d1; /* Soft sky blue for header */
+  color: #ffffff;
+  padding: 20px 30px;
+  text-align: center;
+  font-family: 'Merriweather', serif;
+  font-size: 26px;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Sidebar (sidenav) */
+.sidenav {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 250px;
+  background-color: #9d9fd3; /* Soft light purple for sidebar */
+  color: #ffffff;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  padding-top: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Brand name styling */
+#brandName {
+  padding: 15px 0;
+  font-family: 'Bodoni Moda', serif;
+  font-size: 30px;
+  font-weight: 800;
+  color: #ffffff; /* White text for brand */
+  text-align: center;
+  border-bottom: 2px solid #d5d9ec; /* Subtle light separator */
+  margin-bottom: 30px;
+}
+
+/* Sidebar links */
+.sidenav a {
+  width: 80%;
+  padding: 15px 20px;
+  margin: 12px 0;
+  text-decoration: none;
+  font-size: 18px;
+  color: #ffffff; /* White text for the links */
+  text-align: center;
+  border-radius: 8px;
+  background-color: #6a80d1; /* Sky blue matching the header */
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.sidenav a:hover {
+  background-color: #5e74b7; /* Slightly darker blue for hover */
+  transform: translateY(-2px); /* Subtle lift effect */
+}
+
+/* Main content area */
+#main {
+  margin-left: 270px;
+  padding: 30px;
+  flex: 1;
+  overflow-y: auto;
+  background-color: #f1f6fc; /* Light, clean background for content */
+}
+
+/* Responsive design for medium screens (tablets) */
+@media screen and (max-width: 1024px) {
+  .sidenav {
+      width: 100%;
+      height: auto;
+      position: relative;
+      padding: 15px;
+      box-shadow: none;
+  }
+
+  .sidenav a {
+      font-size: 16px;
+      padding: 12px;
+      width: auto;
+      margin: 8px;
+  }
+
+  #main {
+      margin-left: 0;
+      padding-top: 20px;
+  }
+}
+
+/* Responsive design for smaller screens (phones and smaller tablets) */
+@media screen and (max-width: 768px) {
+  .sidenav {
+      width: 100%;
+      height: auto;
+      position: relative;
+      flex-direction: row;
+      justify-content: space-around;
+      padding: 15px 10px;
+      box-shadow: none;
+  }
+
+  .sidenav a {
+      font-size: 16px;
+      padding: 12px;
+      width: auto;
+      margin: 8px;
+  }
+
+  #main {
+      margin-left: 0;
+      padding-top: 20px;
+  }
+}
+
+/* Mobile-specific design (small screens like mobile phones) */
+@media screen and (max-width: 480px) {
+  /* Adjust header and sidebar for mobile */
+  .header {
+      font-size: 20px;
+      padding: 15px;
+  }
+
+  #brandName {
+      font-size: 24px;
+      margin-bottom: 15px;
+  }
+
+  .sidenav {
+      display: none; /* Sidebar is hidden by default */
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #9d9fd3;
+      z-index: 100;
+      box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .sidenav a {
+      font-size: 14px;
+      padding: 12px;
+      width: auto;
+  }
+
+  /* Show sidebar when toggled */
+  .sidenav.open {
+      display: flex;
+      flex-direction: column;
+      padding-top: 60px;
+  }
+
+  /* Main content area padding adjustments */
+  #main {
+      margin-left: 0;
+      padding: 10px;
+  }
+
+  /* Toggle button for mobile */
+  .menu-btn {
+      display: block;
+      font-size: 30px;
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 10;
+      cursor: pointer;
+  }
+}
